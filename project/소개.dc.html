@@ -1,94 +1,324 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
+<title>소개 — 박수민</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: #fff;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  /* ── Nav ── */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    height: 52px;
+    background: rgba(255, 255, 255, 0.86);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 52px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .nav-back {
+    color: #6e6e73;
+    font-size: 13px;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-back:hover { color: #1d1d1f; }
+
+  .nav-title {
+    color: #1d1d1f;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+  }
+
+  .nav-spacer { width: 80px; }
+
+  /* ── Hero ── */
+  .hero {
+    position: relative;
+    height: 70vh;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .hero-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    animation: fadeIn 1s ease both;
+  }
+
+  .hero-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.15) 55%, rgba(0,0,0,0) 100%);
+  }
+
+  .hero-text {
+    position: relative;
+    z-index: 2;
+    padding: 60px 80px;
+    animation: fadeUp 0.9s ease 0.1s both;
+  }
+
+  .hero-label {
+    margin: 0 0 10px;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  .hero-name {
+    margin: 0 0 10px;
+    font-size: 64px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -2.5px;
+    line-height: 1;
+  }
+
+  /* ── Introduction ── */
+  .intro-section {
+    background: #fff;
+    padding: 100px 80px;
+  }
+
+  .intro-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    animation: fadeUp 0.8s ease 0.2s both;
+  }
+
+  .section-label {
+    margin: 0 0 32px;
+    font-size: 11px;
+    color: #aeaeb2;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  .intro-para {
+    margin: 0 0 32px;
+    font-size: 22px;
+    font-weight: 400;
+    color: #1d1d1f;
+    line-height: 1.75;
+    letter-spacing: -0.4px;
+    text-wrap: pretty;
+  }
+
+  .intro-para:last-child { margin: 0; }
+
+  /* ── Who Am I ── */
+  .whoami-section {
+    background: #f5f5f7;
+    padding: 100px 80px;
+  }
+
+  .whoami-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .whoami-label {
+    margin: 0 0 52px;
+    font-size: 11px;
+    color: #aeaeb2;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 36px 32px;
+  }
+
+  .card-label {
+    margin: 0 0 12px;
+    font-size: 11px;
+    color: #aeaeb2;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .card-value {
+    margin: 0;
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1f;
+    letter-spacing: -1.5px;
+  }
+
+  .card-quote {
+    margin: 0 0 8px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #1d1d1f;
+    letter-spacing: -0.5px;
+    line-height: 1.4;
+    font-style: italic;
+  }
+
+  .card-attribution {
+    margin: 0;
+    font-size: 11px;
+    color: #aeaeb2;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── CTA ── */
+  .cta-section {
+    background: #fff;
+    padding: 80px 80px;
+    text-align: center;
+  }
+
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #1d1d1f;
+    border-radius: 9999px;
+    padding: 14px 32px;
+    font-size: 15px;
+    font-weight: 400;
+    text-decoration: none;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #f5f5f7;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: background 0.2s;
+    cursor: pointer;
+  }
+  .cta-btn:hover { background: #e8e8ed; }
+
+  /* ── Footer ── */
+  .footer {
+    background: #000;
+    padding: 28px 52px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-text {
+    font-size: 13px;
+    color: #424245;
+  }
+</style>
 </head>
 <body>
-<x-dc>
-<helmet>
-  <link rel="stylesheet" href="_ds/apple-web-design-system-f2d81f1f-572a-4359-9d91-45c962e7bf33/tokens/fonts.css">
-  <link rel="stylesheet" href="_ds/apple-web-design-system-f2d81f1f-572a-4359-9d91-45c962e7bf33/tokens/colors.css">
-  <link rel="stylesheet" href="_ds/apple-web-design-system-f2d81f1f-572a-4359-9d91-45c962e7bf33/tokens/typography.css">
-  <link rel="stylesheet" href="_ds/apple-web-design-system-f2d81f1f-572a-4359-9d91-45c962e7bf33/styles.css">
-  <script src="_ds/apple-web-design-system-f2d81f1f-572a-4359-9d91-45c962e7bf33/_ds_bundle.js"></script>
-  <style>
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    html { scroll-behavior: smooth; }
-    body { margin: 0; background: #fff; -webkit-font-smoothing: antialiased; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
-  </style>
-</helmet>
 
 <!-- NAV -->
-<nav style="position: sticky; top: 0; z-index: 100; height: 52px; background: rgba(255,255,255,0.86); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); display: flex; align-items: center; justify-content: space-between; padding: 0 52px; border-bottom: 1px solid rgba(0,0,0,0.06);">
-  <a href="박수민 포트폴리오.dc.html" style="color: #6e6e73; font-size: 13px; text-decoration: none; transition: color 0.2s;" style-hover="color: #1d1d1f;">‹ 돌아가기</a>
-  <span style="color: #1d1d1f; font-size: 17px; font-weight: 600; letter-spacing: -0.3px;">박수민</span>
-  <div style="width: 80px;"></div>
+<nav class="nav">
+  <a href="박수민 포트폴리오.dc.html" class="nav-back">‹ 돌아가기</a>
+  <span class="nav-title">박수민</span>
+  <div class="nav-spacer"></div>
 </nav>
 
-<!-- HERO — 사진 + 이름 -->
-<section style="position: relative; height: 70vh; overflow: hidden; display: flex; align-items: flex-end;">
-  <img src="uploads/KakaoTalk_20260627_095113029.webp" alt="박수민" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center; animation: fadeIn 1s ease both;">
-  <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.15) 55%, rgba(0,0,0,0) 100%);"></div>
-  <div style="position: relative; z-index: 2; padding: 60px 80px; animation: fadeUp 0.9s ease 0.1s both;">
-    <p style="margin: 0 0 10px; font-size: 11px; color: rgba(255,255,255,0.5); letter-spacing: 3px; text-transform: uppercase;">About</p>
-    <h1 style="margin: 0 0 10px; font-size: 64px; font-weight: 700; color: #fff; letter-spacing: -2.5px; line-height: 1;">박수민</h1>
-    
+<!-- HERO -->
+<section class="hero">
+  <img
+    class="hero-img"
+    src="uploads/KakaoTalk_20260627_095113029.webp"
+    alt="박수민"
+  >
+  <div class="hero-gradient"></div>
+  <div class="hero-text">
+    <p class="hero-label">About</p>
+    <h1 class="hero-name">박수민</h1>
   </div>
 </section>
 
 <!-- 자기소개 -->
-<section style="background: #fff; padding: 100px 80px;">
-  <div style="max-width: 860px; margin: 0 auto; animation: fadeUp 0.8s ease 0.2s both;">
-    <p style="margin: 0 0 32px; font-size: 11px; color: #aeaeb2; letter-spacing: 3px; text-transform: uppercase;">Introduction</p>
-    <p style="margin: 0 0 32px; font-size: 22px; font-weight: 400; color: #1d1d1f; line-height: 1.75; letter-spacing: -0.4px; text-wrap: pretty;">저는 <b>성공에 대한 목표 의식</b>이 강한 사람입니다.&nbsp;</p>
-    <p style="margin: 0 0 32px; font-size: 22px; font-weight: 400; color: #1d1d1f; line-height: 1.75; letter-spacing: -0.4px; text-wrap: pretty;"><span style="letter-spacing: -0.4px;">대학에 현역으로 입학했고 군 면제를 받아 또래보다 2~3년의 시간을 더 확보할 수 있었습니다.&nbsp;</span>"넌 좀 쉬어도 돼"라는 말을 많이 들었지만, 저는 오히려 그 시간을 더 의미 있게 사용하고 싶어 하고 싶은 일을 찾기 위해 다양한 경험에 도전하며 스스로를 끊임없이 몰아붙였습니다.</p>
-    <p style="margin: 0 0 32px; font-size: 22px; font-weight: 400; color: #1d1d1f; line-height: 1.75; letter-spacing: -0.4px; text-wrap: pretty;">그러나 이 과정에서 번아웃을 겪고 말았습니다. 이후 회복을 위해 제주도로 장기간 여행을 떠났고, 그곳에서 다양한 사람들과 대화를 나누며 <b>회복 탄력성을 바탕으로 삶을 영위하는 것이 중요하다</b>는 것을 깨달았습니다.</p>
-    <p style="margin: 0; font-size: 22px; font-weight: 400; color: #1d1d1f; line-height: 1.75; letter-spacing: -0.4px; text-wrap: pretty;">따라서 저는 <strong style="font-weight: 600;">빨리 가는 것이 아닌 멀리 가는 것</strong><b>을 목표</b>로 삶을 살아가고자 합니다.</p>
+<section class="intro-section">
+  <div class="intro-inner">
+    <p class="section-label">Introduction</p>
+    <p class="intro-para">저는 <b>성공에 대한 목표 의식</b>이 강한 사람입니다.</p>
+    <p class="intro-para">대학에 현역으로 입학했고 군 면제를 받아 또래보다 2~3년의 시간을 더 확보할 수 있었습니다. "넌 좀 쉬어도 돼"라는 말을 많이 들었지만, 저는 오히려 그 시간을 더 의미 있게 사용하고 싶어 하고 싶은 일을 찾기 위해 다양한 경험에 도전하며 스스로를 끊임없이 몰아붙였습니다.</p>
+    <p class="intro-para">그러나 이 과정에서 번아웃을 겪고 말았습니다. 이후 회복을 위해 제주도로 장기간 여행을 떠났고, 그곳에서 다양한 사람들과 대화를 나누며 <b>회복 탄력성을 바탕으로 삶을 영위하는 것이 중요하다</b>는 것을 깨달았습니다.</p>
+    <p class="intro-para">따라서 저는 <strong>빨리 가는 것이 아닌 멀리 가는 것을 목표</strong>로 삶을 살아가고자 합니다.</p>
   </div>
 </section>
 
 <!-- 키워드 카드 -->
-<section style="background: #f5f5f7; padding: 100px 80px;">
-  <div style="max-width: 1000px; margin: 0 auto;">
-    <p style="margin: 0 0 52px; font-size: 11px; color: #aeaeb2; letter-spacing: 3px; text-transform: uppercase;">WHO AM I</p>
-    <!-- 3개 동일 크기 한 줄 -->
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+<section class="whoami-section">
+  <div class="whoami-inner">
+    <p class="whoami-label">이런 사람이에요</p>
+    <div class="cards-grid">
 
       <!-- MBTI -->
-      <div style="background: #fff; border-radius: 20px; padding: 36px 32px;">
-        <p style="margin: 0 0 12px; font-size: 11px; color: #aeaeb2; letter-spacing: 2px; text-transform: uppercase;">MBTI</p>
-        <p style="margin: 0; font-size: 40px; font-weight: 700; color: #1d1d1f; letter-spacing: -1.5px;">ISTJ</p>
+      <div class="card">
+        <p class="card-label">MBTI</p>
+        <p class="card-value">ISTJ</p>
       </div>
 
       <!-- Hobby -->
-      <div style="background: #fff; border-radius: 20px; padding: 36px 32px;">
-        <p style="margin: 0 0 12px; font-size: 11px; color: #aeaeb2; letter-spacing: 2px; text-transform: uppercase;">Hobby</p>
-        <p style="margin: 0; font-size: 40px; font-weight: 700; color: #1d1d1f; letter-spacing: -1.5px;">운동</p>
+      <div class="card">
+        <p class="card-label">Hobby</p>
+        <p class="card-value">운동</p>
       </div>
 
       <!-- Philosophy -->
-      <div style="background: #fff; border-radius: 20px; padding: 36px 32px;">
-        <p style="margin: 0 0 12px; font-size: 11px; color: #aeaeb2; letter-spacing: 2px; text-transform: uppercase;">Philosophy</p>
-        <p style="margin: 0 0 8px; font-size: 18px; font-weight: 700; color: #1d1d1f; letter-spacing: -0.5px; line-height: 1.4; font-style: italic;">"지나간 것은 지나간대로 그런 의미가 있죠"</p>
-        <p style="margin: 0; font-size: 11px; color: #aeaeb2; letter-spacing: 0.5px;">Lyric by 걱정말아요 그대</p>
+      <div class="card">
+        <p class="card-label">Philosophy</p>
+        <p class="card-quote">"지나간 것은 지나간대로 그런 의미가 있죠"</p>
+        <p class="card-attribution">Lyric by 걱정말아요 그대</p>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- 하단 CTA -->
-<section style="background: #fff; padding: 80px 80px; text-align: center;">
-  <a href="박수민 포트폴리오.dc.html" style="display: inline-flex; align-items: center; gap: 6px; color: #1d1d1f; border-radius: 9999px; padding: 14px 32px; font-size: 15px; font-weight: 400; text-decoration: none; background: #f5f5f7; border: 1px solid rgba(0,0,0,0.1); transition: background 0.2s;" style-hover="background: #e8e8ed;">포트폴리오 보러 가기 ›</a>
+<!-- CTA -->
+<section class="cta-section">
+  <a href="박수민 포트폴리오.dc.html" class="cta-btn">포트폴리오 보러 가기 ›</a>
 </section>
 
-<footer style="background: #000; padding: 28px 52px; display: flex; justify-content: space-between; align-items: center;">
-  <span style="font-size: 13px; color: #424245;">박수민 포트폴리오</span>
-  <span style="font-size: 13px; color: #424245;">© 2026</span>
+<!-- Footer -->
+<footer class="footer">
+  <span class="footer-text">박수민 포트폴리오</span>
+  <span class="footer-text">© 2026</span>
 </footer>
-</x-dc>
+
 </body>
 </html>
