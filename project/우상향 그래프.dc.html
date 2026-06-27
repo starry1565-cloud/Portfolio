@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/apple-web-design-system-f2d81f1f-572a-4359-9d91-45c962e7bf33/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/apple-web-design-system-f2d81f1f-572a-4359-9d91-45c962e7bf33/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/apple-web-design-system-f2d81f1f-572a-4359-9d91-45c962e7bf33/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/apple-web-design-system-f2d81f1f-572a-4359-9d91-45c962e7bf33/styles.css">
+  <script src="_ds/apple-web-design-system-f2d81f1f-572a-4359-9d91-45c962e7bf33/_ds_bundle.js"></script>
+  <style>
+    @keyframes fadeUp { from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);} }
+    @keyframes barGrow { from{width:0;} to{width:var(--w);} }
+    html{scroll-behavior:smooth;}
+    body{margin:0;background:#fff;-webkit-font-smoothing:antialiased;font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;}
+  </style>
+</helmet>
+
+<!-- NAV -->
+<nav style="position:sticky;top:0;z-index:100;height:52px;background:rgba(0,0,0,0.86);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);display:flex;align-items:center;justify-content:space-between;padding:0 52px;">
+  <a href="박수민 포트폴리오.dc.html" style="color:rgba(245,245,247,0.78);font-size:13px;text-decoration:none;" style-hover="color:#f5f5f7;">‹ 돌아가기</a>
+  <span style="color:#f5f5f7;font-size:17px;font-weight:600;letter-spacing:-0.3px;">우상향 그래프</span>
+  <div style="width:80px;"></div>
+</nav>
+
+<!-- HERO -->
+<section style="background:#1d1d1f;padding:120px 52px 100px;text-align:center;animation:fadeUp 0.8s ease both;">
+  <p style="margin:0 0 18px;font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:4px;text-transform:uppercase;">Projects · 성과</p>
+  <h1 style="margin:0 0 24px;font-size:72px;font-weight:700;color:#f5f5f7;letter-spacing:-2.5px;line-height:0.95;">숫자로 증명한<br>기획의 힘</h1>
+  <p style="margin:0 auto;font-size:19px;font-weight:300;color:rgba(255,255,255,0.65);line-height:1.75;max-width:500px;">고객의 문제를 정확히 정의하고, 그 해결이 실제 지표로 이어졌습니다.</p>
+</section>
+
+<!-- PROJECT 1 -->
+<section style="background:#fff;padding:100px 52px;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="display:flex;gap:80px;align-items:flex-start;flex-wrap:wrap;">
+      <div style="flex:1;min-width:280px;">
+        <p style="margin:0 0 12px;font-size:11px;color:#6e6e73;letter-spacing:3px;text-transform:uppercase;">데이원컴퍼니</p>
+        <h2 style="margin:0 0 20px;font-size:40px;font-weight:700;color:#1d1d1f;letter-spacing:-1.2px;line-height:1.1;">커리어<br>프로그램 기획</h2>
+        <p style="margin:0 0 32px;font-size:17px;color:#3a3a3c;line-height:1.75;text-wrap:pretty;">유선 상담·설문으로 재직자 니즈를 파악, 이력서 템플릿·특강·1:1 멘토링을 설계해 이후 기수 정규 커리큘럼으로 편성.</p>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+              <span style="font-size:13px;color:#6e6e73;">이직·커리어 전환</span>
+              <span style="font-size:13px;font-weight:600;color:#0066cc;">73%</span>
+            </div>
+            <div style="height:4px;background:#f5f5f7;border-radius:9999px;overflow:hidden;">
+              <div style="height:100%;width:73%;background:#0066cc;border-radius:9999px;"></div>
+            </div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+              <span style="font-size:13px;color:#6e6e73;">이력서·포트폴리오 강화</span>
+              <span style="font-size:13px;font-weight:600;color:#0066cc;">91%</span>
+            </div>
+            <div style="height:4px;background:#f5f5f7;border-radius:9999px;overflow:hidden;">
+              <div style="height:100%;width:91%;background:#0066cc;border-radius:9999px;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="flex:none;display:flex;flex-direction:column;gap:20px;">
+        <div style="background:#f5f5f7;border-radius:20px;padding:36px 40px;text-align:center;min-width:180px;">
+          <p style="margin:0 0 6px;font-size:52px;font-weight:700;color:#1d1d1f;letter-spacing:-2px;">정규</p>
+          <p style="margin:0;font-size:14px;color:#6e6e73;">커리큘럼 편성</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECT 2 -->
+<section style="background:#f5f5f7;padding:100px 52px;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="display:flex;gap:80px;align-items:flex-start;flex-wrap:wrap;flex-direction:row-reverse;">
+      <div style="flex:1;min-width:280px;">
+        <p style="margin:0 0 12px;font-size:11px;color:#6e6e73;letter-spacing:3px;text-transform:uppercase;">서비스 기획</p>
+        <h2 style="margin:0 0 20px;font-size:40px;font-weight:700;color:#1d1d1f;letter-spacing:-1.2px;line-height:1.1;">Learn.Zip</h2>
+        <p style="margin:0 0 32px;font-size:17px;color:#3a3a3c;line-height:1.75;text-wrap:pretty;">주니어 직장인의 시간·체력·동료 부재 문제를 해결하기 위한 온라인 스터디·프로젝트·멘토링 플랫폼.</p>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+              <span style="font-size:13px;color:#6e6e73;">그룹 생성률</span>
+              <span style="font-size:13px;font-weight:600;color:#0066cc;">7.5%</span>
+            </div>
+            <div style="height:4px;background:#e5e5ea;border-radius:9999px;overflow:hidden;">
+              <div style="height:100%;width:7.5%;background:#0066cc;border-radius:9999px;"></div>
+            </div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+              <span style="font-size:13px;color:#6e6e73;">참여율</span>
+              <span style="font-size:13px;font-weight:600;color:#0066cc;">15%</span>
+            </div>
+            <div style="height:4px;background:#e5e5ea;border-radius:9999px;overflow:hidden;">
+              <div style="height:100%;width:15%;background:#0066cc;border-radius:9999px;"></div>
+            </div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+              <span style="font-size:13px;color:#6e6e73;">멘토링 결제율</span>
+              <span style="font-size:13px;font-weight:600;color:#0066cc;">2.5%</span>
+            </div>
+            <div style="height:4px;background:#e5e5ea;border-radius:9999px;overflow:hidden;">
+              <div style="height:100%;width:2.5%;background:#0066cc;border-radius:9999px;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="flex:none;display:flex;flex-direction:column;gap:16px;">
+        <div style="background:#fff;border-radius:20px;padding:32px 36px;text-align:center;min-width:160px;">
+          <p style="margin:0 0 4px;font-size:48px;font-weight:700;color:#1d1d1f;letter-spacing:-1.8px;">15%</p>
+          <p style="margin:0;font-size:13px;color:#6e6e73;">참여율</p>
+        </div>
+        <div style="background:#fff;border-radius:20px;padding:32px 36px;text-align:center;min-width:160px;">
+          <p style="margin:0 0 4px;font-size:48px;font-weight:700;color:#1d1d1f;letter-spacing:-1.8px;">7.5%</p>
+          <p style="margin:0;font-size:13px;color:#6e6e73;">그룹 생성률</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECT 3 -->
+<section style="background:#1d1d1f;padding:100px 52px;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="display:flex;gap:80px;align-items:flex-start;flex-wrap:wrap;">
+      <div style="flex:1;min-width:280px;">
+        <p style="margin:0 0 12px;font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:3px;text-transform:uppercase;">서비스 기획</p>
+        <h2 style="margin:0 0 20px;font-size:40px;font-weight:700;color:#f5f5f7;letter-spacing:-1.2px;line-height:1.1;">January</h2>
+        <p style="margin:0 0 32px;font-size:17px;color:rgba(255,255,255,0.65);line-height:1.75;text-wrap:pretty;">코로나로 인한 소통 감소·정신 건강 문제를 루틴 관리와 매칭 기반 소통으로 해결한 서비스.</p>
+        <div style="display:flex;gap:32px;flex-wrap:wrap;">
+          <div style="background:rgba(255,255,255,0.06);border-radius:16px;padding:28px 32px;text-align:center;">
+            <p style="margin:0 0 6px;font-size:44px;font-weight:700;color:#2997ff;letter-spacing:-1.6px;">100%</p>
+            <p style="margin:0;font-size:13px;color:rgba(255,255,255,0.45);">서비스 인증률</p>
+          </div>
+          <div style="background:rgba(255,255,255,0.06);border-radius:16px;padding:28px 32px;text-align:center;">
+            <p style="margin:0 0 6px;font-size:44px;font-weight:700;color:#2997ff;letter-spacing:-1.6px;">31%</p>
+            <p style="margin:0;font-size:13px;color:rgba(255,255,255,0.45);">리텐션률</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:72px;text-align:center;">
+      <a href="박수민 포트폴리오.dc.html" style="display:inline-flex;align-items:center;gap:4px;color:#fff;border-radius:9999px;padding:13px 28px;font-size:15px;font-weight:400;text-decoration:none;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.35);transition:background 0.2s,color 0.2s;" style-hover="background:#fff;color:#000;">포트폴리오로 돌아가기</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#000;padding:28px 52px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+  <span style="font-size:13px;color:#424245;">박수민 포트폴리오</span>
+  <span style="font-size:13px;color:#424245;">© 2026</span>
+</footer>
+</x-dc>
+</body>
+</html>

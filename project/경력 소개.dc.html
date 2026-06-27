@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/apple-web-design-system-f2d81f1f-572a-4359-9d91-45c962e7bf33/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/apple-web-design-system-f2d81f1f-572a-4359-9d91-45c962e7bf33/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/apple-web-design-system-f2d81f1f-572a-4359-9d91-45c962e7bf33/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/apple-web-design-system-f2d81f1f-572a-4359-9d91-45c962e7bf33/styles.css">
+  <script src="_ds/apple-web-design-system-f2d81f1f-572a-4359-9d91-45c962e7bf33/_ds_bundle.js"></script>
+  <style>
+    @keyframes fadeUp { from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);} }
+    @keyframes driftLeft {
+      0%   { transform: scale(1.06) translate(0%, 0%); }
+      33%  { transform: scale(1.09) translate(1.2%, 0.6%); }
+      66%  { transform: scale(1.07) translate(-0.8%, 1.0%); }
+      100% { transform: scale(1.06) translate(0%, 0%); }
+    }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: #1d1d1f; -webkit-font-smoothing: antialiased; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
+  </style>
+</helmet>
+
+<!-- NAV -->
+<nav style="position: sticky; top: 0; z-index: 100; height: 52px; background: rgba(0,0,0,0.86); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); display: flex; align-items: center; justify-content: space-between; padding: 0 52px;">
+  <a href="박수민 포트폴리오.dc.html" style="color: rgba(245,245,247,0.78); font-size: 13px; text-decoration: none;" style-hover="color: #f5f5f7;">‹ 돌아가기</a>
+  <span style="color: #f5f5f7; font-size: 17px; font-weight: 600; letter-spacing: -0.3px;">경력</span>
+
+  <div style="width: 80px;"></div>
+</nav>
+
+<!-- HERO — 사진 풀블리드 -->
+<section style="position: relative; height: 60vh; overflow: hidden; display: flex; align-items: flex-end;">
+  <!-- 좌측: DAY1 COMPANY -->
+  <div style="position: absolute; inset: 0; width: 50%; background: #fff; display: flex; align-items: center; justify-content: center;">
+    <img src="uploads/pasted-1782309040127-0.png" alt="DAY1 COMPANY" style="width: 70%; object-fit: contain;">
+  </div>
+  <!-- 우측: Fast campus -->
+  <div style="position: absolute; inset: 0; left: 50%; background: #fff; display: flex; align-items: center; justify-content: center;">
+    <img src="uploads/pasted-1782308989624-0.png" alt="Fast campus" style="width: 70%; object-fit: contain;">
+  </div>
+  <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.0) 100%);"></div>
+  <div style="position: relative; z-index: 2; padding: 60px 80px; animation: fadeUp 0.8s ease both;">
+    <p style="margin: 0 0 12px 0; font-size: 11px; color: rgba(255,255,255,0.45); letter-spacing: 4px; text-transform: uppercase;">Career</p>
+    <h1 style="margin: 0; font-size: 64px; font-weight: 700; color: #f5f5f7; letter-spacing: -2.2px; line-height: 0.97;">경력</h1>
+  </div>
+</section>
+
+<!-- 경력 상세 -->
+<section style="padding: 100px 80px; max-width: 1100px; margin: 0 auto; animation: fadeUp 0.8s ease 0.15s both;">
+
+  <!-- 데이원컴퍼니 -->
+  <div style="display: flex; gap: 80px; align-items: flex-start; flex-wrap: wrap; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 60px;">
+
+    <!-- 왼쪽: 기간 + 회사 -->
+    <div style="flex: none; width: 220px;">
+      <p style="margin: 0 0 16px 0; font-size: 13px; color: rgba(255,255,255,0.45);">2025.12 ~ 현재</p>
+      <h2 style="margin: 0 0 8px 0; font-size: 28px; font-weight: 700; color: #f5f5f7; letter-spacing: -0.6px;">데이원컴퍼니</h2>
+      <p style="margin: 0; font-size: 15px; color: rgba(255,255,255,0.55);">Product Manager</p>
+    </div>
+
+    <!-- 오른쪽: 업무 상세 -->
+    <div style="flex: 1; min-width: 280px; display: flex; flex-direction: column; gap: 40px;">
+
+      <!-- 업무 1: AI PM 부트캠프 -->
+      <div style="background: #2a2a2c; border-radius: 20px; overflow: hidden; display: flex; min-height: 300px;">
+        <div style="flex: 1; padding: 40px; display: flex; flex-direction: column;">
+          <p style="margin: 0 0 14px 0; font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 3px; text-transform: uppercase;">Project 01</p>
+          <h3 style="margin: 0 0 24px 0; font-size: 22px; font-weight: 600; color: #ffffff; letter-spacing: -0.4px;">AI PM 부트캠프 기획</h3>
+          <div style="display: flex; flex-direction: column; gap: 12px; flex: 1;">
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <span style="font-size: 15px; color: #ffffff; line-height: 1.65;">교강사 섭외</span>
+              <span style="font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.65; padding-left: 16px;">└ 수강생 만족도 <strong style="color: rgb(255, 255, 255);">4.8/5</strong> 달성</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <span style="font-size: 15px; color: #ffffff; line-height: 1.65;">사전 설명회 기획</span>
+              <span style="font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.65; padding-left: 16px;">└ 사전 설명회 참여자 기준 교육 과정 전환율 <strong style="color: #ffffff;">14%</strong> 달성</span>
+            </div>
+          </div>
+          <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; margin-top: 28px; display: flex; flex-wrap: wrap; gap: 10px;">
+            <span style="background: rgba(41,151,255,0.12); border-radius: 9999px; padding: 5px 14px; font-size: 12px; color: #2997ff; font-weight: 500;">교강사 섭외</span>
+            <span style="background: rgba(41,151,255,0.12); border-radius: 9999px; padding: 5px 14px; font-size: 12px; color: #2997ff; font-weight: 500;">사전 설명회 기획</span>
+          </div>
+        </div>
+        <div style="flex: none; width: 42%; overflow: hidden;">
+          <img src="uploads/thumb---sns---200kb-png-.jpg" alt="AI PM 부트캠프" style="width: 100%; height: 100%; object-fit: cover; object-position: right center;">
+        </div>
+      </div>
+
+      <!-- 업무 2: Inner Circle -->
+      <div style="background: #2a2a2c; border-radius: 20px; overflow: hidden; display: flex; min-height: 340px;">
+        <div style="flex: 1; padding: 40px; display: flex; flex-direction: column;">
+          <p style="margin: 0 0 14px 0; font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 3px; text-transform: uppercase;">Project 02</p>
+          <h3 style="margin: 0 0 24px 0; font-size: 22px; font-weight: 600; color: #ffffff; letter-spacing: -0.4px;">재직자 부트캠프 Inner Circle PM/UXUI 기획 및 운영</h3>
+          <div style="display: flex; flex-direction: column; gap: 12px; flex: 1;">
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <span style="font-size: 15px; color: #ffffff; line-height: 1.65;">오프라인 네트워킹 행사 기획 · 운영</span>
+              <span style="font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.65; padding-left: 16px;">└ 행사 참여율 <strong style="color: #ffffff;">92.3%</strong></span>
+              <span style="font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.65; padding-left: 16px;">└ 수강생 만족도 <strong style="color: #ffffff;">5/5</strong></span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <span style="font-size: 15px; color: #ffffff; line-height: 1.65;">커리큘럼 기획 및 개편</span>
+              <span style="font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.65; padding-left: 16px;">└ 온보딩 주차 철회 인원 <strong style="color: #ffffff;">0명</strong> 달성</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <span style="font-size: 15px; color: #ffffff; line-height: 1.65;">커리어 프로그램 기획</span>
+              <span style="font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.65; padding-left: 16px;">└ 이후 기수의 <strong style="color: #ffffff;">정규 커리큘럼으로 편성</strong></span>
+            </div>
+          </div>
+          <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; margin-top: 28px; display: flex; flex-wrap: wrap; gap: 10px;">
+            <span style="background: rgba(41,151,255,0.12); border-radius: 9999px; padding: 5px 14px; font-size: 12px; color: #2997ff; font-weight: 500;">오프라인 네트워킹 행사</span>
+            <span style="background: rgba(41,151,255,0.12); border-radius: 9999px; padding: 5px 14px; font-size: 12px; color: #2997ff; font-weight: 500;">커리큘럼 기획 및 개편</span>
+            <span style="background: rgba(41,151,255,0.12); border-radius: 9999px; padding: 5px 14px; font-size: 12px; color: #2997ff; font-weight: 500;">커리어 프로그램 기획</span>
+          </div>
+        </div>
+        <div style="flex: none; width: 42%; overflow: hidden;">
+          <img src="uploads/asdfasdfdaf.png" alt="Inner Circle" style="width: 100%; height: 100%; object-fit: cover; object-position: right center;">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 돌아가기 버튼 -->
+  <div style="text-align: center; margin-top: 80px; padding-top: 60px; border-top: 1px solid rgba(255,255,255,0.1);">
+    <a href="박수민 포트폴리오.dc.html" style="display: inline-flex; align-items: center; gap: 4px; color: #fff; border-radius: 9999px; padding: 13px 28px; font-size: 15px; font-weight: 400; text-decoration: none; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.35); transition: background 0.2s, color 0.2s;" style-hover="background: #fff; color: #000;">포트폴리오로 돌아가기</a>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer style="background: #000; padding: 28px 52px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+  <span style="font-size: 13px; color: #424245;">박수민 포트폴리오</span>
+  <span style="font-size: 13px; color: #424245;">© 2026</span>
+</footer>
+</x-dc>
+</body>
+</html>

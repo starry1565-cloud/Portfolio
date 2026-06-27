@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/apple-web-design-system-f2d81f1f-572a-4359-9d91-45c962e7bf33/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/apple-web-design-system-f2d81f1f-572a-4359-9d91-45c962e7bf33/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/apple-web-design-system-f2d81f1f-572a-4359-9d91-45c962e7bf33/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/apple-web-design-system-f2d81f1f-572a-4359-9d91-45c962e7bf33/styles.css">
+  <script src="_ds/apple-web-design-system-f2d81f1f-572a-4359-9d91-45c962e7bf33/_ds_bundle.js"></script>
+  <style>
+    @keyframes fadeUp { from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);} }
+    html{scroll-behavior:smooth;}
+    body{margin:0;background:#1d1d1f;-webkit-font-smoothing:antialiased;font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;}
+  </style>
+</helmet>
+
+<nav style="position:sticky;top:0;z-index:100;height:52px;background:rgba(0,0,0,0.86);backdrop-filter:saturate(180%) blur(20px);display:flex;align-items:center;justify-content:space-between;padding:0 52px;">
+  <a href="박수민 포트폴리오.dc.html" style="color:rgba(245,245,247,0.78);font-size:13px;text-decoration:none;" style-hover="color:#f5f5f7;">‹ 돌아가기</a>
+  <span style="color:#f5f5f7;font-size:17px;font-weight:600;letter-spacing:-0.3px;">커리어 프로그램 기획</span>
+  <div style="width:80px;"></div>
+</nav>
+
+<!-- HERO -->
+<section style="position:relative;height:55vh;overflow:hidden;display:flex;align-items:flex-end;">
+  <img src="uploads/Inner+Circle+이미지.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;image-rendering:high-quality;-webkit-backface-visibility:hidden;">
+  <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.85) 0%,rgba(0,0,0,0.2) 60%,rgba(0,0,0,0) 100%);"></div>
+  <div style="position:relative;z-index:2;padding:60px 80px;animation:fadeUp 0.8s ease both;">
+    <p style="margin:0 0 12px;font-size:11px;color:rgba(255,255,255,0.45);letter-spacing:0.5px;text-transform:uppercase;">데이원컴퍼니 · PM</p>
+    <h1 style="margin:0;font-size:60px;font-weight:700;color:#f5f5f7;letter-spacing:-2px;line-height:1;">커리어 프로그램 기획</h1>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<section style="padding:80px 80px;max-width:1100px;margin:0 auto;animation:fadeUp 0.8s ease 0.1s both;">
+
+  <!-- 개요 -->
+  <div style="display:grid;grid-template-columns:1fr 2fr;gap:80px;border-top:1px solid rgba(255,255,255,0.1);padding-top:60px;margin-bottom:60px;">
+    <div>
+      <p style="margin:0 0 8px;font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:3px;text-transform:uppercase;">Overview</p>
+      <h2 style="margin:0;font-size:28px;font-weight:700;color:#f5f5f7;letter-spacing:-0.6px;">프로젝트 개요</h2>
+    </div>
+    <div>
+      <p style="margin:0;font-size:17px;color:rgba(255,255,255,0.75);line-height:1.8;text-wrap:pretty;">유선 상담, 설문 조사를 통해 재직자 수강생의 니즈 및 페인포인트를 파악하고, 이력서 템플릿 제작·특강·1:1 멘토링을 기획·운영한 프로젝트입니다. 그 결과, <strong style="color:#fff;">이후 기수의 정규 커리큘럼으로 편성</strong>됐습니다.</p>
+    </div>
+  </div>
+
+  <!-- 문제 정의 -->
+  <div style="display:grid;grid-template-columns:1fr 2fr;gap:80px;border-top:1px solid rgba(255,255,255,0.1);padding-top:60px;margin-bottom:60px;">
+    <div>
+      <p style="margin:0 0 8px;font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:3px;text-transform:uppercase;">Problem</p>
+      <h2 style="margin:0;font-size:28px;font-weight:700;color:#f5f5f7;letter-spacing:-0.6px;">문제 정의</h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div style="display:flex;gap:12px;align-items:flex-start;">
+        <span style="flex:none;width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,0.4);margin-top:10px;"></span>
+        <span style="font-size:16px;color:rgba(255,255,255,0.8);line-height:1.75;">구직자 과정 수료생과 달리 재직자 과정 수료생에게는 커리어 지원 혜택이 부재</span>
+      </div>
+      <div style="display:flex;gap:12px;align-items:flex-start;">
+        <span style="flex:none;width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,0.4);margin-top:10px;"></span>
+        <span style="font-size:16px;color:rgba(255,255,255,0.8);line-height:1.75;">유선 상담 및 설문 조사 결과, 지원 동기의 약 <strong style="color:#fff;">73%</strong>가 이직·커리어 전환, <strong style="color:#fff;">91%</strong>가 이력서·포트폴리오 강화임을 확인</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 해결 방안 -->
+  <div style="display:grid;grid-template-columns:1fr 2fr;gap:80px;border-top:1px solid rgba(255,255,255,0.1);padding-top:60px;margin-bottom:60px;">
+    <div>
+      <p style="margin:0 0 8px;font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:3px;text-transform:uppercase;">Solution</p>
+      <h2 style="margin:0;font-size:28px;font-weight:700;color:#f5f5f7;letter-spacing:-0.6px;">해결 방안</h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div style="display:flex;gap:12px;align-items:flex-start;">
+        <span style="flex:none;width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,0.4);margin-top:10px;"></span>
+        <span style="font-size:16px;color:rgba(255,255,255,0.8);line-height:1.75;">PM·UXUI 직무 전용 이력서 템플릿 제작 및 제공</span>
+      </div>
+      <div style="display:flex;gap:12px;align-items:flex-start;">
+        <span style="flex:none;width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,0.4);margin-top:10px;"></span>
+        <span style="font-size:16px;color:rgba(255,255,255,0.8);line-height:1.75;">강사와 협의 후 이력서·포트폴리오 특강 기획 및 진행</span>
+      </div>
+      <div style="display:flex;gap:12px;align-items:flex-start;">
+        <span style="flex:none;width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,0.4);margin-top:10px;"></span>
+        <span style="font-size:16px;color:rgba(255,255,255,0.8);line-height:1.75;">1:1 멘토링 운영으로 학습 방향 설정 및 커리어 고민에 대한 개별 피드백 제공</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 성과 -->
+  <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:60px;margin-bottom:80px;">
+    <p style="margin:0 0 40px;font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:3px;text-transform:uppercase;">Result</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+      <div style="background:#2a2a2c;border-radius:20px;padding:52px 60px;display:flex;flex-direction:column;align-items:flex-start;gap:16px;grid-column:1/-1;">
+        <p style="margin:0;font-size:15px;color:rgba(255,255,255,0.5);">결과</p>
+        <p style="margin:0;font-size:40px;font-weight:700;color:#f5f5f7;letter-spacing:-1px;text-align:center;width:100%;">이후 기수의 정규 커리큘럼으로 편성</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center;">
+    <a href="박수민 포트폴리오.dc.html" style="display:inline-flex;align-items:center;gap:4px;color:#fff;border-radius:9999px;padding:13px 28px;font-size:15px;font-weight:400;text-decoration:none;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.35);transition:background 0.2s,color 0.2s;" style-hover="background:#fff;color:#000;">포트폴리오로 돌아가기</a>
+  </div>
+
+</section>
+
+<footer style="background:#000;padding:28px 52px;display:flex;justify-content:space-between;align-items:center;">
+  <span style="font-size:13px;color:#424245;">박수민 포트폴리오</span>
+  <span style="font-size:13px;color:#424245;">© 2026</span>
+</footer>
+</x-dc>
+</body>
+</html>

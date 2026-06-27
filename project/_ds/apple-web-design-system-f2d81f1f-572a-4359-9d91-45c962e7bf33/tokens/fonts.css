@@ -1,0 +1,19 @@
+/* Apple Web Design System — Webfonts
+ *
+ * SF Pro is Apple's PROPRIETARY system font and cannot be redistributed.
+ * Strategy:
+ *   1. On Apple platforms, `system-ui` / `-apple-system` (declared first in the
+ *      family stacks in typography.css) resolves to the REAL SF Pro automatically.
+ *   2. On non-Apple platforms, Inter is the closest open-source equivalent.
+ *
+ * Inter is loaded from Google Fonts below. If you have licensed SF Pro binaries,
+ * drop them in assets/fonts/ and add @font-face rules here for the exact face. */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap");
+
+/* Tighten Inter to approximate SF Pro's cadence (it tracks slightly wider). */
+@supports (font-variation-settings: normal) {
+  :root {
+    --font-feature-apple: "ss03" 1; /* rounded "a" approximation */
+  }
+}

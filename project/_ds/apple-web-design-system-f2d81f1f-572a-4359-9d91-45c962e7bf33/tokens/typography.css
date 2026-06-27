@@ -1,0 +1,84 @@
+/* Apple Web Design System — Typography tokens
+ * Display ≥19px → SF Pro Display 600 with negative tracking ("Apple tight").
+ * Body 17px/400 SF Pro Text. Weight ladder: 300 / 400 / 600 / 700 (500 absent). */
+
+:root {
+  /* ---- Families --------------------------------------------------------- */
+  /* system-ui / -apple-system resolves to real SF Pro on Apple platforms;
+     Inter is the cross-platform fallback (see fonts.css + readme caveat). */
+  --font-display: "SF Pro Display", system-ui, -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+  --font-text: "SF Pro Text", system-ui, -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+
+  /* ---- Weights (no 500) ------------------------------------------------- */
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* ---- Scale: size / line-height / tracking ----------------------------- */
+  --type-hero-size: 56px;      --type-hero-lh: 1.07;  --type-hero-track: -0.28px;
+  --type-display-lg-size: 40px; --type-display-lg-lh: 1.10; --type-display-lg-track: 0px;
+  --type-display-md-size: 34px; --type-display-md-lh: 1.47; --type-display-md-track: -0.374px;
+  --type-lead-size: 28px;       --type-lead-lh: 1.14;  --type-lead-track: 0.196px;
+  --type-lead-airy-size: 24px;  --type-lead-airy-lh: 1.5; --type-lead-airy-track: 0px;
+  --type-tagline-size: 21px;    --type-tagline-lh: 1.19; --type-tagline-track: 0.231px;
+  --type-body-size: 17px;       --type-body-lh: 1.47;  --type-body-track: -0.374px;
+  --type-dense-link-lh: 2.41;
+  --type-caption-size: 14px;    --type-caption-lh: 1.43; --type-caption-track: -0.224px;
+  --type-button-large-size: 18px; --type-button-large-lh: 1.0;
+  --type-fine-print-size: 12px; --type-fine-print-lh: 1.0; --type-fine-print-track: -0.12px;
+  --type-micro-size: 10px;      --type-micro-lh: 1.3;  --type-micro-track: -0.08px;
+  --type-nav-size: 12px;        --type-nav-lh: 1.0;    --type-nav-track: -0.12px;
+}
+
+/* ---- Type role utility classes (optional helpers) ---------------------- */
+.type-hero {
+  font-family: var(--font-display); font-weight: var(--weight-semibold);
+  font-size: var(--type-hero-size); line-height: var(--type-hero-lh);
+  letter-spacing: var(--type-hero-track);
+}
+.type-display-lg {
+  font-family: var(--font-display); font-weight: var(--weight-semibold);
+  font-size: var(--type-display-lg-size); line-height: var(--type-display-lg-lh);
+  letter-spacing: var(--type-display-lg-track);
+}
+.type-display-md {
+  font-family: var(--font-text); font-weight: var(--weight-semibold);
+  font-size: var(--type-display-md-size); line-height: var(--type-display-md-lh);
+  letter-spacing: var(--type-display-md-track);
+}
+.type-lead {
+  font-family: var(--font-text); font-weight: var(--weight-regular);
+  font-size: var(--type-lead-size); line-height: var(--type-lead-lh);
+  letter-spacing: var(--type-lead-track);
+}
+.type-lead-airy {
+  font-family: var(--font-display); font-weight: var(--weight-light);
+  font-size: var(--type-lead-airy-size); line-height: var(--type-lead-airy-lh);
+  letter-spacing: var(--type-lead-airy-track);
+}
+.type-tagline {
+  font-family: var(--font-text); font-weight: var(--weight-semibold);
+  font-size: var(--type-tagline-size); line-height: var(--type-tagline-lh);
+  letter-spacing: var(--type-tagline-track);
+}
+.type-body {
+  font-family: var(--font-text); font-weight: var(--weight-regular);
+  font-size: var(--type-body-size); line-height: var(--type-body-lh);
+  letter-spacing: var(--type-body-track);
+}
+.type-body-strong {
+  font-family: var(--font-text); font-weight: var(--weight-semibold);
+  font-size: var(--type-body-size); line-height: 1.24;
+  letter-spacing: var(--type-body-track);
+}
+.type-caption {
+  font-family: var(--font-text); font-weight: var(--weight-regular);
+  font-size: var(--type-caption-size); line-height: var(--type-caption-lh);
+  letter-spacing: var(--type-caption-track);
+}
+.type-fine-print {
+  font-family: var(--font-text); font-weight: var(--weight-regular);
+  font-size: var(--type-fine-print-size); line-height: var(--type-fine-print-lh);
+  letter-spacing: var(--type-fine-print-track);
+}

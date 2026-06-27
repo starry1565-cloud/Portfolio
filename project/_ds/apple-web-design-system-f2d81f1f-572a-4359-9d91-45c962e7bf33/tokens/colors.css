@@ -1,0 +1,48 @@
+/* Apple Web Design System — Color tokens
+ * One blue accent. Light/dark surface alternation. Near-black ink.
+ * Base values first, then semantic aliases. Never inline hex in components. */
+
+:root {
+  /* ---- Brand & accent ---------------------------------------------------- */
+  --color-primary: #0066cc;          /* Action Blue — every interactive element */
+  --color-primary-focus: #0071e3;    /* Focus ring (brighter sibling) */
+  --color-primary-on-dark: #2997ff;  /* Sky Link Blue — in-copy links on dark tiles */
+
+  /* ---- Surface ---------------------------------------------------------- */
+  --color-canvas: #ffffff;             /* Pure White — dominant canvas */
+  --color-canvas-parchment: #f5f5f7;   /* Parchment — signature off-white */
+  --color-surface-pearl: #fafafc;      /* Pearl — ghost-button fill */
+  --color-surface-tile-1: #272729;     /* Near-black tile (primary) */
+  --color-surface-tile-2: #2a2a2c;     /* Micro-step lighter */
+  --color-surface-tile-3: #252527;     /* Micro-step darker */
+  --color-surface-black: #000000;      /* True void — nav bar, video */
+  --color-surface-chip: #d2d2d7;       /* Translucent chip base */
+  --color-surface-chip-translucent: rgba(210, 210, 215, 0.64);
+
+  /* ---- Text ------------------------------------------------------------- */
+  --color-ink: #1d1d1f;            /* Near-black ink — headlines, body */
+  --color-body: #1d1d1f;           /* Body (same near-black tone) */
+  --color-body-on-dark: #ffffff;   /* Text on dark tiles / nav */
+  --color-body-muted: #cccccc;     /* Secondary copy on dark */
+  --color-ink-muted-80: #333333;   /* Body on pearl surface */
+  --color-ink-muted-48: #7a7a7a;   /* Disabled text, fine print */
+
+  /* ---- Hairlines & borders --------------------------------------------- */
+  --color-divider-soft: rgba(0, 0, 0, 0.04);  /* Soft ring on secondary buttons */
+  --color-hairline: #e0e0e0;                  /* 1px hairline on cards/chips */
+  --color-border-translucent: rgba(0, 0, 0, 0.08);
+
+  /* ---- Semantic aliases ------------------------------------------------- */
+  --surface-page: var(--color-canvas-parchment);
+  --surface-card: var(--color-canvas);
+  --surface-nav: var(--color-surface-black);
+
+  --text-body: var(--color-body);
+  --text-heading: var(--color-ink);
+  --text-on-dark: var(--color-body-on-dark);
+  --text-muted: var(--color-ink-muted-48);
+
+  --action: var(--color-primary);
+  --on-action: #ffffff;
+  --focus-ring: var(--color-primary-focus);
+}
