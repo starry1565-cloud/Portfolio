@@ -1,120 +1,165 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
+<title>학생 창업 · 박수민</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; -webkit-font-smoothing: antialiased; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
+
+  .nav { position: sticky; top: 0; z-index: 100; height: 52px; background: rgba(0,0,0,0.86); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); display: flex; align-items: center; justify-content: space-between; padding: 0 52px; }
+  .nav-back { color: rgba(245,245,247,0.78); font-size: 13px; text-decoration: none; transition: color 0.2s; }
+  .nav-back:hover { color: #f5f5f7; }
+  .nav-title { color: #f5f5f7; font-size: 17px; font-weight: 600; letter-spacing: -0.3px; }
+
+  .hero { background: #1d1d1f; padding: 120px 52px 100px; text-align: center; animation: fadeUp 0.8s ease both; }
+  .hero-eyebrow { margin: 0 0 18px; font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 4px; text-transform: uppercase; }
+  .hero-title { margin: 0 0 24px; font-size: 72px; font-weight: 700; color: #f5f5f7; letter-spacing: -2.5px; line-height: 0.95; }
+  .hero-desc { margin: 0 auto; font-size: 19px; font-weight: 300; color: rgba(255,255,255,0.65); line-height: 1.75; max-width: 520px; }
+
+  .kpop-section { background: #fff; padding: 100px 52px; }
+  .kpop-inner { max-width: 1100px; margin: 0 auto; }
+  .kpop-card { display: flex; align-items: stretch; border-radius: 20px; overflow: hidden; }
+  .kpop-text { flex: 1; min-width: 280px; background: #f5f5f7; padding: 60px 52px; display: flex; flex-direction: column; gap: 20px; }
+  .kpop-org { margin: 0; font-size: 11px; color: #6e6e73; letter-spacing: 3px; text-transform: uppercase; }
+  .kpop-title { margin: 0; font-size: 36px; font-weight: 700; color: #1d1d1f; letter-spacing: -1px; line-height: 1.1; }
+  .kpop-desc { margin: 0; font-size: 17px; color: #3a3a3c; line-height: 1.75; }
+  .kpop-bullets { display: flex; flex-direction: column; gap: 12px; }
+  .kpop-bullet { display: flex; gap: 12px; align-items: flex-start; }
+  .kpop-dot { flex: none; width: 4px; height: 4px; border-radius: 50%; background: #6e6e73; margin-top: 9px; }
+  .kpop-bullet-text { font-size: 15px; color: #1d1d1f; line-height: 1.65; }
+  .kpop-stats { flex: none; background: #1d1d1f; padding: 60px 52px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-content: center; }
+  .kpop-stat { text-align: center; }
+  .kpop-stat-val { margin: 0 0 6px; font-size: 44px; font-weight: 700; color: #2997ff; letter-spacing: -1.6px; }
+  .kpop-stat-lbl { margin: 0; font-size: 13px; color: rgba(255,255,255,0.45); }
+
+  .awards-section { background: #f5f5f7; padding: 100px 52px; }
+  .awards-inner { max-width: 1100px; margin: 0 auto; }
+  .awards-heading { font-size: 52px; font-weight: 700; color: #1d1d1f; letter-spacing: -1.8px; margin: 0 0 72px; }
+  .award-row { border-top: 1px solid #d2d2d7; padding: 48px 0; display: flex; gap: 60px; align-items: flex-start; flex-wrap: wrap; }
+  .award-row:last-child { border-bottom: 1px solid #d2d2d7; }
+  .award-year { flex: none; width: 120px; margin: 0; font-size: 13px; color: #6e6e73; }
+  .award-body { flex: 1; min-width: 260px; }
+  .award-org { margin: 0 0 6px; font-size: 12px; color: #6e6e73; letter-spacing: 1px; }
+  .award-title { margin: 0 0 12px; font-size: 26px; font-weight: 600; color: #1d1d1f; letter-spacing: -0.5px; }
+  .award-desc { margin: 0; font-size: 17px; color: #3a3a3c; line-height: 1.65; }
+
+  .back-wrap { margin-top: 72px; text-align: center; }
+  .back-btn { display: inline-flex; align-items: center; gap: 4px; color: #1d1d1f; border-radius: 9999px; padding: 13px 28px; font-size: 15px; font-weight: 400; text-decoration: none; background: rgba(0,0,0,0.06); border: 1px solid rgba(0,0,0,0.12); transition: background 0.2s; }
+  .back-btn:hover { background: rgba(0,0,0,0.1); }
+
+  .footer { background: #000; padding: 28px 52px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .footer-text { font-size: 13px; color: #424245; }
+
+  @media (max-width: 768px) {
+    .nav { padding: 0 20px; }
+    .hero { padding: 80px 20px 60px; }
+    .hero-title { font-size: 48px; letter-spacing: -1.8px; }
+    .kpop-section { padding: 60px 20px; }
+    .kpop-card { flex-direction: column; }
+    .kpop-text { padding: 40px 28px; }
+    .kpop-title { font-size: 28px; }
+    .kpop-stats { padding: 40px 28px; grid-template-columns: 1fr 1fr; }
+    .kpop-stat-val { font-size: 34px; }
+    .awards-section { padding: 60px 20px; }
+    .awards-heading { font-size: 36px; margin-bottom: 40px; }
+    .award-row { gap: 20px; }
+    .award-year { width: auto; }
+    .footer { padding: 20px; }
+  }
+</style>
 </head>
 <body>
-<x-dc>
-<helmet>
-  <link rel="stylesheet" href="_ds/apple-web-design-system-f2d81f1f-572a-4359-9d91-45c962e7bf33/tokens/fonts.css">
-  <link rel="stylesheet" href="_ds/apple-web-design-system-f2d81f1f-572a-4359-9d91-45c962e7bf33/tokens/colors.css">
-  <link rel="stylesheet" href="_ds/apple-web-design-system-f2d81f1f-572a-4359-9d91-45c962e7bf33/tokens/typography.css">
-  <link rel="stylesheet" href="_ds/apple-web-design-system-f2d81f1f-572a-4359-9d91-45c962e7bf33/styles.css">
-  <script src="_ds/apple-web-design-system-f2d81f1f-572a-4359-9d91-45c962e7bf33/_ds_bundle.js"></script>
-  <style>
-    @keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
-    html{scroll-behavior:smooth;}
-    body{margin:0;background:#fff;-webkit-font-smoothing:antialiased;font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;}
-  </style>
-</helmet>
 
-<!-- NAV -->
-<nav style="position:sticky;top:0;z-index:100;height:52px;background:rgba(0,0,0,0.86);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);display:flex;align-items:center;justify-content:space-between;padding:0 52px;">
-  <a href="박수민 포트폴리오.dc.html" style="color:rgba(245,245,247,0.78);font-size:13px;text-decoration:none;" style-hover="color:#f5f5f7;">‹ 돌아가기</a>
-  <span style="color:#f5f5f7;font-size:17px;font-weight:600;letter-spacing:-0.3px;">학생 창업</span>
+<nav class="nav">
+  <a href="박수민 포트폴리오.dc.html" class="nav-back">‹ 돌아가기</a>
+  <span class="nav-title">학생 창업</span>
   <div style="width:80px;"></div>
 </nav>
 
-<!-- HERO -->
-<section style="background:#1d1d1f;padding:120px 52px 100px;text-align:center;animation:fadeUp 0.8s ease both;">
-  <p style="margin:0 0 18px;font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:4px;text-transform:uppercase;">Activities · Awards</p>
-  <h1 style="margin:0 0 24px;font-size:72px;font-weight:700;color:#f5f5f7;letter-spacing:-2.5px;line-height:0.95;">직접 부딪히며<br>만든 경험들</h1>
-  <p style="margin:0 auto;font-size:19px;font-weight:300;color:rgba(255,255,255,0.65);line-height:1.75;max-width:520px;">교실 밖에서 쌓은 대외활동과 수상 경력이 기획자로서의 실전 감각을 만들었습니다.</p>
+<section class="hero">
+  <p class="hero-eyebrow">Activities · Awards</p>
+  <h1 class="hero-title">직접 부딪히며<br>만든 경험들</h1>
+  <p class="hero-desc">교실 밖에서 쌓은 대외활동과 수상 경력이 기획자로서의 실전 감각을 만들었습니다.</p>
 </section>
 
-<!-- KPOP -->
-<section style="background:#fff;padding:100px 52px;">
-  <div style="max-width:1100px;margin:0 auto;">
-    <div style="display:flex;gap:0;align-items:stretch;flex-wrap:wrap;border-radius:20px;overflow:hidden;">
-      <div style="flex:1;min-width:280px;background:#f5f5f7;padding:60px 52px;display:flex;flex-direction:column;gap:20px;">
-        <p style="margin:0;font-size:11px;color:#6e6e73;letter-spacing:3px;text-transform:uppercase;">2024.12 – 2025.03 · 대외활동</p>
-        <h2 style="margin:0;font-size:36px;font-weight:700;color:#1d1d1f;letter-spacing:-1px;line-height:1.1;">KPOP 아이돌<br>마케팅 실무과정 <span style="color:#0066cc;">10기</span></h2>
-        <p style="margin:0;font-size:17px;color:#3a3a3c;line-height:1.75;text-wrap:pretty;">신인 밴드 '조이 풀스'의 공연 기획부터 SNS 콘텐츠 제작까지 — 실전 마케팅의 전 과정을 직접 운영했습니다.</p>
-        <div style="display:flex;flex-direction:column;gap:12px;margin-top:8px;">
-          <div style="display:flex;gap:12px;align-items:flex-start;">
-            <span style="flex:none;width:4px;height:4px;border-radius:50%;background:#6e6e73;margin-top:9px;"></span>
-            <span style="font-size:15px;color:#1d1d1f;line-height:1.65;">공연 기획 및 마케팅 — <strong style="font-weight:600;">우수 팀 선정</strong>, 공연 수익 흑자 달성</span>
+<section class="kpop-section">
+  <div class="kpop-inner">
+    <div class="kpop-card">
+      <div class="kpop-text">
+        <p class="kpop-org">2024.12 – 2025.03 · 대외활동</p>
+        <h2 class="kpop-title">KPOP 아이돌<br>마케팅 실무과정 <span style="color:#0066cc;">10기</span></h2>
+        <p class="kpop-desc">신인 밴드 '조이풀스'의 공연 기획부터 SNS 콘텐츠 제작까지 — 실전 마케팅의 전 과정을 직접 운영했습니다.</p>
+        <div class="kpop-bullets">
+          <div class="kpop-bullet">
+            <span class="kpop-dot"></span>
+            <span class="kpop-bullet-text">공연 기획 및 마케팅 — <strong>우수 팀 선정</strong>, 공연 수익 흑자 달성</span>
           </div>
-          <div style="display:flex;gap:12px;align-items:flex-start;">
-            <span style="flex:none;width:4px;height:4px;border-radius:50%;background:#6e6e73;margin-top:9px;"></span>
-            <span style="font-size:15px;color:#1d1d1f;line-height:1.65;">콘텐츠 48개 기획·제작</span>
+          <div class="kpop-bullet">
+            <span class="kpop-dot"></span>
+            <span class="kpop-bullet-text">콘텐츠 48개 기획·제작</span>
           </div>
         </div>
       </div>
-      <div style="flex:none;background:#1d1d1f;padding:60px 52px;display:grid;grid-template-columns:1fr 1fr;gap:20px;align-content:center;">
-        <div style="text-align:center;">
-          <p style="margin:0 0 6px;font-size:44px;font-weight:700;color:#2997ff;letter-spacing:-1.6px;">48개</p>
-          <p style="margin:0;font-size:13px;color:rgba(255,255,255,0.45);">콘텐츠 제작</p>
+      <div class="kpop-stats">
+        <div class="kpop-stat">
+          <p class="kpop-stat-val">48개</p>
+          <p class="kpop-stat-lbl">콘텐츠 제작</p>
         </div>
-        <div style="text-align:center;">
-          <p style="margin:0 0 6px;font-size:44px;font-weight:700;color:#2997ff;letter-spacing:-1.6px;">+50</p>
-          <p style="margin:0;font-size:13px;color:rgba(255,255,255,0.45);">SNS 팔로워</p>
+        <div class="kpop-stat">
+          <p class="kpop-stat-val">+50</p>
+          <p class="kpop-stat-lbl">SNS 팔로워</p>
         </div>
-        <div style="text-align:center;">
-          <p style="margin:0 0 6px;font-size:44px;font-weight:700;color:#2997ff;letter-spacing:-1.6px;">+30</p>
-          <p style="margin:0;font-size:13px;color:rgba(255,255,255,0.45);">유튜브 구독자</p>
+        <div class="kpop-stat">
+          <p class="kpop-stat-val">+30</p>
+          <p class="kpop-stat-lbl">유튜브 구독자</p>
         </div>
-        <div style="text-align:center;">
-          <p style="margin:0 0 6px;font-size:44px;font-weight:700;color:#2997ff;letter-spacing:-1.6px;">1.3K</p>
-          <p style="margin:0;font-size:13px;color:rgba(255,255,255,0.45);">평균 조회수</p>
+        <div class="kpop-stat">
+          <p class="kpop-stat-val">1.3K</p>
+          <p class="kpop-stat-lbl">평균 조회수</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- AWARDS -->
-<section style="background:#f5f5f7;padding:100px 52px;">
-  <div style="max-width:1100px;margin:0 auto;">
-    <h2 style="font-size:52px;font-weight:700;color:#1d1d1f;letter-spacing:-1.8px;margin:0 0 72px;">수상</h2>
-    <div style="display:flex;flex-direction:column;gap:0;">
-
-      <div style="border-top:1px solid #d2d2d7;padding:48px 0;display:flex;gap:60px;align-items:flex-start;flex-wrap:wrap;">
-        <div style="flex:none;width:120px;">
-          <p style="margin:0;font-size:13px;color:#6e6e73;">2024.06</p>
-        </div>
-        <div style="flex:1;min-width:260px;">
-          <p style="margin:0 0 6px;font-size:12px;color:#6e6e73;letter-spacing:1px;">사회 공헌 프로젝트: FM</p>
-          <h3 style="margin:0 0 12px;font-size:26px;font-weight:600;color:#1d1d1f;letter-spacing:-0.5px;">'활동 장려상' 수상</h3>
-          <p style="margin:0;font-size:17px;color:#3a3a3c;line-height:1.65;">우리 동네 마감 할인 알림 서비스 '마감 히어로' 서비스 기획</p>
+<section class="awards-section">
+  <div class="awards-inner">
+    <h2 class="awards-heading">수상</h2>
+    <div>
+      <div class="award-row">
+        <p class="award-year">2024.06</p>
+        <div class="award-body">
+          <p class="award-org">사회 공헌 프로젝트: FM</p>
+          <h3 class="award-title">'활동 장려상' 수상</h3>
+          <p class="award-desc">우리 동네 마감 할인 알림 서비스 '마감 히어로' 서비스 기획</p>
         </div>
       </div>
-
-      <div style="border-top:1px solid #d2d2d7;padding:48px 0;display:flex;gap:60px;align-items:flex-start;flex-wrap:wrap;border-bottom:1px solid #d2d2d7;">
-        <div style="flex:none;width:120px;">
-          <p style="margin:0;font-size:13px;color:#6e6e73;">2021.12</p>
-        </div>
-        <div style="flex:1;min-width:260px;">
-          <p style="margin:0 0 6px;font-size:12px;color:#6e6e73;letter-spacing:1px;">메타버스 콘텐츠 제작</p>
-          <h3 style="margin:0 0 12px;font-size:26px;font-weight:600;color:#1d1d1f;letter-spacing:-0.5px;">'혁신기술상' 수상</h3>
-          <p style="margin:0;font-size:17px;color:#3a3a3c;line-height:1.65;">'Campus Life'를 주제로 한 메타버스 콘텐츠 기획</p>
+      <div class="award-row">
+        <p class="award-year">2021.12</p>
+        <div class="award-body">
+          <p class="award-org">메타버스 콘텐츠 제작</p>
+          <h3 class="award-title">'혁신기술상' 수상</h3>
+          <p class="award-desc">'Campus Life'를 주제로 한 메타버스 콘텐츠 기획</p>
         </div>
       </div>
-
     </div>
-    <div style="margin-top:72px;text-align:center;">
-      <a href="박수민 포트폴리오.dc.html" style="display:inline-flex;align-items:center;gap:4px;color:#1d1d1f;border-radius:9999px;padding:13px 28px;font-size:15px;font-weight:400;text-decoration:none;background:rgba(0,0,0,0.06);border:1px solid rgba(0,0,0,0.12);transition:background 0.2s;" style-hover="background:rgba(0,0,0,0.1);">포트폴리오로 돌아가기</a>
+    <div class="back-wrap">
+      <a href="박수민 포트폴리오.dc.html" class="back-btn">포트폴리오로 돌아가기</a>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer style="background:#000;padding:28px 52px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
-  <span style="font-size:13px;color:#424245;">박수민 포트폴리오</span>
-  <span style="font-size:13px;color:#424245;">© 2026</span>
+<footer class="footer">
+  <span class="footer-text">박수민 포트폴리오</span>
+  <span class="footer-text">© 2026</span>
 </footer>
-</x-dc>
+
 </body>
 </html>

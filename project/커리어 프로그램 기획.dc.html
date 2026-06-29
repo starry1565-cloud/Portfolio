@@ -1,134 +1,139 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
+<title>커리어 프로그램 기획 · 박수민</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #1d1d1f; -webkit-font-smoothing: antialiased; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
+
+  .nav { position: sticky; top: 0; z-index: 100; height: 52px; background: rgba(0,0,0,0.86); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); display: flex; align-items: center; justify-content: space-between; padding: 0 52px; }
+  .nav-back { color: rgba(245,245,247,0.78); font-size: 13px; text-decoration: none; transition: color 0.2s; }
+  .nav-back:hover { color: #f5f5f7; }
+  .nav-title { color: #f5f5f7; font-size: 17px; font-weight: 600; letter-spacing: -0.3px; }
+
+  .hero { position: relative; height: 55vh; overflow: hidden; display: flex; align-items: flex-end; }
+  .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+  .hero-gradient { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0) 100%); }
+  .hero-text { position: relative; z-index: 2; padding: 60px 80px; animation: fadeUp 0.8s ease both; }
+  .hero-eyebrow { margin: 0 0 12px; font-size: 11px; color: rgba(255,255,255,0.45); letter-spacing: 4px; text-transform: uppercase; }
+  .hero-title { margin: 0; font-size: 60px; font-weight: 700; color: #f5f5f7; letter-spacing: -2px; line-height: 1; }
+
+  .content { padding: 80px; max-width: 1100px; margin: 0 auto; animation: fadeUp 0.8s ease 0.1s both; }
+
+  .section-row { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 60px; margin-bottom: 60px; }
+  .section-label { margin: 0 0 8px; font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 3px; text-transform: uppercase; }
+  .section-heading { margin: 0; font-size: 28px; font-weight: 700; color: #f5f5f7; letter-spacing: -0.6px; }
+
+  .body-text { margin: 0; font-size: 17px; color: rgba(255,255,255,0.75); line-height: 1.8; }
+
+  .bullets { display: flex; flex-direction: column; gap: 16px; }
+  .bullet { display: flex; gap: 12px; align-items: flex-start; }
+  .bullet-dot { flex: none; width: 4px; height: 4px; border-radius: 50%; background: rgba(255,255,255,0.4); margin-top: 10px; }
+  .bullet-text { font-size: 16px; color: rgba(255,255,255,0.8); line-height: 1.75; }
+
+  .result-section { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 60px; margin-bottom: 80px; }
+  .result-card { background: #2a2a2c; border-radius: 20px; padding: 52px 60px; text-align: center; }
+  .result-label { margin: 0 0 16px; font-size: 15px; color: rgba(255,255,255,0.5); }
+  .result-value { margin: 0; font-size: 40px; font-weight: 700; color: #f5f5f7; letter-spacing: -1px; }
+
+  .back-wrap { text-align: center; }
+  .back-btn { display: inline-flex; align-items: center; gap: 4px; color: #fff; border-radius: 9999px; padding: 13px 28px; font-size: 15px; font-weight: 400; text-decoration: none; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.35); transition: background 0.2s, color 0.2s; }
+  .back-btn:hover { background: #fff; color: #000; }
+
+  .footer { background: #000; padding: 28px 52px; display: flex; justify-content: space-between; align-items: center; }
+  .footer-text { font-size: 13px; color: #424245; }
+
+  @media (max-width: 768px) {
+    .nav { padding: 0 20px; }
+    .hero { height: 45vh; }
+    .hero-text { padding: 40px 24px; }
+    .hero-title { font-size: 36px; letter-spacing: -1.5px; }
+    .content { padding: 44px 20px 80px; }
+    .section-row { grid-template-columns: 1fr; gap: 24px; padding-top: 40px; margin-bottom: 40px; }
+    .section-heading { font-size: 22px; }
+    .result-card { padding: 36px 24px; }
+    .result-value { font-size: 28px; }
+    .footer { padding: 20px; }
+  }
+</style>
 </head>
 <body>
-<x-dc>
-<helmet>
-  <link rel="stylesheet" href="_ds/apple-web-design-system-f2d81f1f-572a-4359-9d91-45c962e7bf33/tokens/fonts.css">
-  <link rel="stylesheet" href="_ds/apple-web-design-system-f2d81f1f-572a-4359-9d91-45c962e7bf33/tokens/colors.css">
-  <link rel="stylesheet" href="_ds/apple-web-design-system-f2d81f1f-572a-4359-9d91-45c962e7bf33/tokens/typography.css">
-  <link rel="stylesheet" href="_ds/apple-web-design-system-f2d81f1f-572a-4359-9d91-45c962e7bf33/styles.css">
-  <script src="_ds/apple-web-design-system-f2d81f1f-572a-4359-9d91-45c962e7bf33/_ds_bundle.js"></script>
-  <style>
-    @keyframes fadeUp { from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);} }
-    html{scroll-behavior:smooth;}
-    body{margin:0;background:#1d1d1f;-webkit-font-smoothing:antialiased;font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;}
 
-    @media (max-width: 768px) {
-      nav { padding: 0 20px !important; }
-      section[style*="height:55vh"] { height: 45vh !important; }
-      section[style*="height:55vh"] div[style*="padding:60px 80px"] { padding: 40px 24px !important; }
-      section[style*="height:55vh"] h1 { font-size: 36px !important; letter-spacing: -1.5px !important; }
-      section[style*="padding:80px 80px"] { padding: 44px 20px !important; }
-      div[style*="grid-template-columns:1fr 2fr"] { grid-template-columns: 1fr !important; gap: 24px !important; padding-top: 40px !important; margin-bottom: 40px !important; }
-      div[style*="grid-template-columns:1fr 2fr"] h2 { font-size: 22px !important; }
-      div[style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr !important; }
-      div[style*="grid-column:1/-1"] { padding: 32px 24px !important; }
-      div[style*="grid-column:1/-1"] p[style*="font-size:40px"] { font-size: 26px !important; }
-      footer { padding: 20px 20px !important; }
-    }
-
-    @media (max-width: 480px) {
-      section[style*="height:55vh"] h1 { font-size: 28px !important; }
-    }
-  </style>
-</helmet>
-
-<nav style="position:sticky;top:0;z-index:100;height:52px;background:rgba(0,0,0,0.86);backdrop-filter:saturate(180%) blur(20px);display:flex;align-items:center;justify-content:space-between;padding:0 52px;">
-  <a href="박수민 포트폴리오.dc.html" style="color:rgba(245,245,247,0.78);font-size:13px;text-decoration:none;" style-hover="color:#f5f5f7;">‹ 돌아가기</a>
-  <span style="color:#f5f5f7;font-size:17px;font-weight:600;letter-spacing:-0.3px;">커리어 프로그램 기획</span>
+<nav class="nav">
+  <a href="박수민 포트폴리오.dc.html" class="nav-back">‹ 돌아가기</a>
+  <span class="nav-title">커리어 프로그램 기획</span>
   <div style="width:80px;"></div>
 </nav>
 
-<!-- HERO -->
-<section style="position:relative;height:55vh;overflow:hidden;display:flex;align-items:flex-end;">
-  <img src="uploads/Inner%2BCircle%2B이미지.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;image-rendering:high-quality;-webkit-backface-visibility:hidden;">
-  <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.85) 0%,rgba(0,0,0,0.2) 60%,rgba(0,0,0,0) 100%);"></div>
-  <div style="position:relative;z-index:2;padding:60px 80px;animation:fadeUp 0.8s ease both;">
-    <p style="margin:0 0 12px;font-size:11px;color:rgba(255,255,255,0.45);letter-spacing:0.5px;text-transform:uppercase;">데이원컴퍼니 · PM</p>
-    <h1 style="margin:0;font-size:60px;font-weight:700;color:#f5f5f7;letter-spacing:-2px;line-height:1;">커리어 프로그램 기획</h1>
+<section class="hero">
+  <img src="uploads/Inner%2BCircle%2B이미지.jpg" alt="" class="hero-img">
+  <div class="hero-gradient"></div>
+  <div class="hero-text">
+    <p class="hero-eyebrow">데이원컴퍼니 · PM</p>
+    <h1 class="hero-title">커리어 프로그램 기획</h1>
   </div>
 </section>
 
-<!-- CONTENT -->
-<section style="padding:80px 80px;max-width:1100px;margin:0 auto;animation:fadeUp 0.8s ease 0.1s both;">
+<section class="content">
 
-  <!-- 개요 -->
-  <div style="display:grid;grid-template-columns:1fr 2fr;gap:80px;border-top:1px solid rgba(255,255,255,0.1);padding-top:60px;margin-bottom:60px;">
+  <div class="section-row">
     <div>
-      <p style="margin:0 0 8px;font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:3px;text-transform:uppercase;">Overview</p>
-      <h2 style="margin:0;font-size:28px;font-weight:700;color:#f5f5f7;letter-spacing:-0.6px;">프로젝트 개요</h2>
+      <p class="section-label">Overview</p>
+      <h2 class="section-heading">프로젝트 개요</h2>
     </div>
     <div>
-      <p style="margin:0;font-size:17px;color:rgba(255,255,255,0.75);line-height:1.8;text-wrap:pretty;">유선 상담, 설문 조사를 통해 재직자 수강생의 니즈 및 페인포인트를 파악하고, 이력서 템플릿 제작·특강·1:1 멘토링을 기획·운영한 프로젝트입니다. 그 결과, <strong style="color:#fff;">이후 기수의 정규 커리큘럼으로 편성</strong>됐습니다.</p>
+      <p class="body-text">유선 상담, 설문 조사를 통해 재직자 수강생의 니즈 및 페인포인트를 파악하고, 이력서 템플릿 제작·특강·1:1 멘토링을 기획·운영한 프로젝트입니다. 그 결과, <strong style="color:#fff;">이후 기수의 정규 커리큘럼으로 편성</strong>됐습니다.</p>
     </div>
   </div>
 
-  <!-- 문제 정의 -->
-  <div style="display:grid;grid-template-columns:1fr 2fr;gap:80px;border-top:1px solid rgba(255,255,255,0.1);padding-top:60px;margin-bottom:60px;">
+  <div class="section-row">
     <div>
-      <p style="margin:0 0 8px;font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:3px;text-transform:uppercase;">Problem</p>
-      <h2 style="margin:0;font-size:28px;font-weight:700;color:#f5f5f7;letter-spacing:-0.6px;">문제 정의</h2>
+      <p class="section-label">Problem</p>
+      <h2 class="section-heading">문제 정의</h2>
     </div>
-    <div style="display:flex;flex-direction:column;gap:16px;">
-      <div style="display:flex;gap:12px;align-items:flex-start;">
-        <span style="flex:none;width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,0.4);margin-top:10px;"></span>
-        <span style="font-size:16px;color:rgba(255,255,255,0.8);line-height:1.75;">구직자 과정 수료생과 달리 재직자 과정 수료생에게는 커리어 지원 혜택이 부재</span>
-      </div>
-      <div style="display:flex;gap:12px;align-items:flex-start;">
-        <span style="flex:none;width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,0.4);margin-top:10px;"></span>
-        <span style="font-size:16px;color:rgba(255,255,255,0.8);line-height:1.75;">유선 상담 및 설문 조사 결과, 지원 동기의 약 <strong style="color:#fff;">73%</strong>가 이직·커리어 전환, <strong style="color:#fff;">91%</strong>가 이력서·포트폴리오 강화임을 확인</span>
-      </div>
+    <div class="bullets">
+      <div class="bullet"><span class="bullet-dot"></span><span class="bullet-text">구직자 과정 수료생과 달리 재직자 과정 수료생에게는 커리어 지원 혜택이 부재</span></div>
+      <div class="bullet"><span class="bullet-dot"></span><span class="bullet-text">유선 상담 및 설문 조사 결과, 지원 동기의 약 <strong style="color:#fff;">73%</strong>가 이직·커리어 전환, <strong style="color:#fff;">91%</strong>가 이력서·포트폴리오 강화임을 확인</span></div>
     </div>
   </div>
 
-  <!-- 해결 방안 -->
-  <div style="display:grid;grid-template-columns:1fr 2fr;gap:80px;border-top:1px solid rgba(255,255,255,0.1);padding-top:60px;margin-bottom:60px;">
+  <div class="section-row">
     <div>
-      <p style="margin:0 0 8px;font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:3px;text-transform:uppercase;">Solution</p>
-      <h2 style="margin:0;font-size:28px;font-weight:700;color:#f5f5f7;letter-spacing:-0.6px;">해결 방안</h2>
+      <p class="section-label">Solution</p>
+      <h2 class="section-heading">해결 방안</h2>
     </div>
-    <div style="display:flex;flex-direction:column;gap:16px;">
-      <div style="display:flex;gap:12px;align-items:flex-start;">
-        <span style="flex:none;width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,0.4);margin-top:10px;"></span>
-        <span style="font-size:16px;color:rgba(255,255,255,0.8);line-height:1.75;">PM·UXUI 직무 전용 이력서 템플릿 제작 및 제공</span>
-      </div>
-      <div style="display:flex;gap:12px;align-items:flex-start;">
-        <span style="flex:none;width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,0.4);margin-top:10px;"></span>
-        <span style="font-size:16px;color:rgba(255,255,255,0.8);line-height:1.75;">강사와 협의 후 이력서·포트폴리오 특강 기획 및 진행</span>
-      </div>
-      <div style="display:flex;gap:12px;align-items:flex-start;">
-        <span style="flex:none;width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,0.4);margin-top:10px;"></span>
-        <span style="font-size:16px;color:rgba(255,255,255,0.8);line-height:1.75;">1:1 멘토링 운영으로 학습 방향 설정 및 커리어 고민에 대한 개별 피드백 제공</span>
-      </div>
+    <div class="bullets">
+      <div class="bullet"><span class="bullet-dot"></span><span class="bullet-text">PM·UXUI 직무 전용 이력서 템플릿 제작 및 제공</span></div>
+      <div class="bullet"><span class="bullet-dot"></span><span class="bullet-text">강사와 협의 후 이력서·포트폴리오 특강 기획 및 진행</span></div>
+      <div class="bullet"><span class="bullet-dot"></span><span class="bullet-text">1:1 멘토링 운영으로 학습 방향 설정 및 커리어 고민에 대한 개별 피드백 제공</span></div>
     </div>
   </div>
 
-  <!-- 성과 -->
-  <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:60px;margin-bottom:80px;">
-    <p style="margin:0 0 40px;font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:3px;text-transform:uppercase;">Result</p>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
-      <div style="background:#2a2a2c;border-radius:20px;padding:52px 60px;display:flex;flex-direction:column;align-items:flex-start;gap:16px;grid-column:1/-1;">
-        <p style="margin:0;font-size:15px;color:rgba(255,255,255,0.5);">결과</p>
-        <p style="margin:0;font-size:40px;font-weight:700;color:#f5f5f7;letter-spacing:-1px;text-align:center;width:100%;">이후 기수의 정규 커리큘럼으로 편성</p>
-      </div>
+  <div class="result-section">
+    <p class="section-label">Result</p>
+    <div class="result-card" style="margin-top:40px;">
+      <p class="result-label">결과</p>
+      <p class="result-value">이후 기수의 정규 커리큘럼으로 편성</p>
     </div>
   </div>
 
-  <div style="text-align:center;">
-    <a href="박수민 포트폴리오.dc.html" style="display:inline-flex;align-items:center;gap:4px;color:#fff;border-radius:9999px;padding:13px 28px;font-size:15px;font-weight:400;text-decoration:none;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.35);transition:background 0.2s,color 0.2s;" style-hover="background:#fff;color:#000;">포트폴리오로 돌아가기</a>
+  <div class="back-wrap">
+    <a href="박수민 포트폴리오.dc.html" class="back-btn">포트폴리오로 돌아가기</a>
   </div>
 
 </section>
 
-<footer style="background:#000;padding:28px 52px;display:flex;justify-content:space-between;align-items:center;">
-  <span style="font-size:13px;color:#424245;">박수민 포트폴리오</span>
-  <span style="font-size:13px;color:#424245;">© 2026</span>
+<footer class="footer">
+  <span class="footer-text">박수민 포트폴리오</span>
+  <span class="footer-text">© 2026</span>
 </footer>
-</x-dc>
+
 </body>
 </html>
