@@ -707,6 +707,57 @@
   }
 
   .footer-text { font-size: 13px; color: #424245; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .nav { padding: 0 20px; }
+    .nav-links { gap: 16px; }
+    .nav-link { font-size: 12px; }
+
+    .hero { min-height: auto; flex-direction: column; align-items: stretch; }
+    .hero-text { padding: 52px 24px 40px; text-align: center; align-items: center; }
+    .hero-name { font-size: 52px; letter-spacing: -2px; }
+    .hero-desc { font-size: 15px; }
+    .hero-photo-link { width: 100%; height: 52vw; flex: none; position: relative; }
+    .hero-photo-fade { background: linear-gradient(to bottom, #1d1d1f 0%, rgba(29,29,31,0) 22%); }
+    #hero-photo-wrap { animation: none; }
+
+    .exp-section { flex-direction: column; min-height: auto; }
+    .exp-link { min-height: 60vw; }
+    .exp-content { padding: 48px 24px; min-height: auto; }
+    .exp-heading { font-size: 32px; }
+    .exp-org { font-size: 20px; }
+
+    .projects-section { padding: 60px 20px; }
+    .proj-grid { grid-template-columns: 1fr; }
+    .proj-card { min-height: 360px; }
+    .section-heading { font-size: 36px; letter-spacing: -1.2px; margin-bottom: 40px; }
+
+    .awards-section { padding: 60px 20px; }
+    .awards-heading { font-size: 36px; letter-spacing: -1.2px; margin-bottom: 40px; }
+    .awards-grid-3 { grid-template-columns: 1fr; }
+    .awards-grid-2 { grid-template-columns: 1fr; }
+
+    .etc-section { padding: 60px 20px; }
+    .etc-heading { font-size: 36px; letter-spacing: -1.2px; }
+    .etc-link { padding: 24px; }
+    .etc-item { padding: 24px; }
+
+    .contact-section { padding: 60px 20px; }
+    .contact-heading { font-size: 36px; letter-spacing: -1.2px; }
+    .contact-sub { font-size: 17px; }
+    .contact-cards { flex-direction: column; }
+    .contact-card { max-width: 100%; }
+
+    .footer { padding: 20px 20px; }
+  }
+
+  @media (max-width: 480px) {
+    .nav-links { display: none; }
+    .hero-name { font-size: 42px; }
+    .hero-tags { flex-direction: column; align-items: center; gap: 10px; }
+    .proj-content { padding: 28px; }
+  }
 </style>
 </head>
 <body>
