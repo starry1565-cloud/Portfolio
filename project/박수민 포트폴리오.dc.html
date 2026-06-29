@@ -571,10 +571,16 @@
     flex-wrap: wrap;
     gap: 16px;
     text-decoration: none;
-    transition: opacity 0.15s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     min-height: 100px;
   }
-  .etc-link:hover { opacity: 0.85; }
+  .etc-link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.45);
+  }
+  .etc-link:hover .etc-bg {
+    transform: scale(1.04);
+  }
 
   .etc-item {
     position: relative;
@@ -596,6 +602,7 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
+    transition: transform 0.4s ease;
   }
 
   .etc-overlay { position: absolute; inset: 0; }
