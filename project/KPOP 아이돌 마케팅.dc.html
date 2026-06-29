@@ -332,6 +332,27 @@
     align-items: center;
   }
   .footer-text { font-size: 13px; color: #424245; }
+
+  @media (max-width: 768px) {
+    .nav { padding: 0 20px; }
+    .hero { height: 45vh; }
+    .hero-text { padding: 40px 24px; }
+    .hero-title { font-size: 36px; letter-spacing: -1.5px; line-height: 1.1; }
+    .content { padding: 44px 20px 80px; }
+    .section-row { grid-template-columns: 1fr; gap: 24px; padding-top: 40px; margin-bottom: 40px; }
+    .section-heading { font-size: 22px; }
+    .result-cards-4 { grid-template-columns: repeat(2, 1fr); }
+    .social-cards { grid-template-columns: 1fr; }
+    .award-card { padding: 28px 20px; }
+    .award-card-value { font-size: 26px; }
+    .footer { padding: 20px 20px; }
+  }
+
+  @media (max-width: 480px) {
+    .hero-title { font-size: 28px; }
+    .result-cards-4 { grid-template-columns: 1fr; }
+    .result-card-value { font-size: 28px; }
+  }
 </style>
 </head>
 <body>

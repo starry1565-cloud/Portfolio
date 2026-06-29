@@ -17,6 +17,24 @@
     @keyframes fadeUp { from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);} }
     html{scroll-behavior:smooth;}
     body{margin:0;background:#1d1d1f;-webkit-font-smoothing:antialiased;font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;}
+
+    @media (max-width: 768px) {
+      nav { padding: 0 20px !important; }
+      section[style*="height:55vh"] { height: 45vh !important; }
+      section[style*="height:55vh"] div[style*="padding:60px 80px"] { padding: 40px 24px !important; }
+      section[style*="height:55vh"] h1 { font-size: 36px !important; letter-spacing: -1.5px !important; }
+      section[style*="padding:80px 80px"] { padding: 44px 20px !important; }
+      div[style*="grid-template-columns:1fr 2fr"] { grid-template-columns: 1fr !important; gap: 24px !important; padding-top: 40px !important; margin-bottom: 40px !important; }
+      div[style*="grid-template-columns:1fr 2fr"] h2 { font-size: 22px !important; }
+      div[style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr !important; }
+      div[style*="grid-column:1/-1"] { padding: 32px 24px !important; }
+      div[style*="grid-column:1/-1"] p[style*="font-size:40px"] { font-size: 26px !important; }
+      footer { padding: 20px 20px !important; }
+    }
+
+    @media (max-width: 480px) {
+      section[style*="height:55vh"] h1 { font-size: 28px !important; }
+    }
   </style>
 </helmet>
 
